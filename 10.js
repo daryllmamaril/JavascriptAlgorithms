@@ -2,11 +2,9 @@
 // rule: sort the number, the first smallest number at the left side, the second smaller number at the right side, and so on...
 
 function symmetricSort(array) {
-  const oddIndex = array
-    .sort((a, b) => a - b)
-    .filter((num, i) => i % 2 === 1)
-    .reverse();
-  const evenIndex = array.sort((a, b) => a - b).filter((num, i) => i % 2 === 0);
+  const arrayCopy = array.slice().sort((a, b) => a - b);
+  const oddIndex = arrayCopy.filter((num, i) => i % 2 === 1).reverse();
+  const evenIndex = arrayCopy.filter((num, i) => i % 2 === 0);
   //return [...evenIndex, ...oddIndex]; //-->Using rest operator
   return evenIndex.concat(oddIndex);
 }
