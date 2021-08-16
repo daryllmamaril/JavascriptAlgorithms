@@ -15,14 +15,12 @@ function cakes(recipe, available) {
 }
 
 // HIGHEST RANKED SOLUTION IN CODEWARS
-function cakes2(recipe, available) {
-  return Object.keys(recipe).reduce(function (val, ingredient) {
-    return Math.min(
-      Math.floor(available[ingredient] / recipe[ingredient] || 0),
-      val
-    );
-  }, Infinity);
-}
+const cakes2 = (recipe, available) =>
+  Math.min(
+    ...Object.keys(recipe).map((key) =>
+      Math.floor(available[key] / recipe[key] || 0)
+    )
+  );
 
 // must return 2
 console.log(
