@@ -41,7 +41,7 @@ function same2(array1, array2) {
   return true;
 }
 console.log(same2([1, 2, 3, 2, 5], [9, 1, 4, 4, 11])); //false
-console.log(same2([1, 2, 3], [4, 1, 9])); //true
+console.log(same1([1, 2, 3], [4, 1, 9])); //true
 console.log(same2([1, 2, 3], [1, 9])); //false
 console.log(same2([1, 2, 1], [4, 4, 1])); //false(frequency must be the same)
 console.log(same2([10, 4, 5], [16, 100, 25])); //true
