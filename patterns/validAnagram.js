@@ -1,3 +1,5 @@
+// FREQUENCY COUNTER PATTERN
+
 // MY SOLUTION
 function validAnagram1(str1, str2) {
   if (str1.length !== str2.length) {
@@ -19,6 +21,7 @@ function validAnagram1(str1, str2) {
   return true;
 }
 
+// BEST PRACTICE
 function validAnagram(first, second) {
   if (first.length !== second.length) {
     return false;

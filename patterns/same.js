@@ -1,4 +1,4 @@
-// FREQUENCY PATTERN
+// FREQUENCY COUNTER PATTERN
 
 // MY SOLUTION - Time Complexity: O(n2)
 function same(array1, array2) {
