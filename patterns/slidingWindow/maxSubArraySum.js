@@ -18,3 +18,9 @@ function maxSubArraySum1(array, num) {
   return max;
 }
 console.log(maxSubArraySum1([2, 6, 9, 2, 1, 8, 5, 6, 3], 3)); //19
+
+//BEST PRACTICE
+function maxSubArraySum(array, num) {
+  //
+}
+console.log(maxSubArraySum1([2, 6, 9, 2, 1, 8, 5, 6, 3], 3)); //19
