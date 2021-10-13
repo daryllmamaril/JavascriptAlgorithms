@@ -41,12 +41,12 @@ function areThereDuplicates2() {
 //
 //
 
-// USING MULTIPLE POINTERS PATTERN (Two pointers)
+// USING MULTIPLE POINTERS PATTERN (Two pointers) (Doesnt work for mixed type arguments)
 function areThereDuplicates3(...args) {
   let start = 0;
   let next = 1;
 
-  if (typeof args[start] === "string") {
+  if (typeof args[0] === "string") {
     args.sort();
   } else {
     args.sort((a, b) => a - b);
@@ -61,15 +61,15 @@ function areThereDuplicates3(...args) {
   }
   return false;
 }
-
-// ONE LINER
-function areThereDuplicates4() {
-  return new Set(arguments).size !== arguments.length;
-}
-
 console.log(areThereDuplicates3(1, 2, 3)); //false
 console.log(areThereDuplicates3(1, 4, 2, 2, 3, 4, 5, 6, 7, 8, 9)); //true
 console.log(areThereDuplicates3(1, 2, 2)); // true
 console.log(areThereDuplicates3("a", "b", "c", "a")); //true
 console.log(areThereDuplicates3("antler", "zebra", "tiger", "dog")); //false
 console.log(areThereDuplicates3("antler", "dog", "zebra", "tiger", "dog")); //true
+
+// ONE LINER (Works for mixed type arguments)
+function areThereDuplicates4() {
+  return new Set(arguments).size !== arguments.length;
+}
+console.log(areThereDuplicates4(1, 2, 3, "a", "b", "c", "a")); //true
