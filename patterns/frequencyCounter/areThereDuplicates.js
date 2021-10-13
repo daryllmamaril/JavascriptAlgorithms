@@ -1,8 +1,7 @@
-// USING FREQUENCY COUNTER PATTERN
-
 // Implement a function that accepts a variable number of arguments and checks whether there are any duplicates among the arguments passed in.
 // Time Complexity should be O(N)
 
+// USING FREQUENCY COUNTER PATTERN:
 // MY SOLUTION
 function areThereDuplicates() {
   const inputArray = Object.values(arguments);
@@ -32,6 +31,45 @@ function areThereDuplicates2() {
   return false;
 }
 
-console.log(areThereDuplicates(1, 2, 3)); //false
-console.log(areThereDuplicates(1, 2, 2)); // true
-console.log(areThereDuplicates("a", "b", "c", "a")); //true
+// console.log(areThereDuplicates(1, 2, 3)); //false
+// console.log(areThereDuplicates(1, 2, 2)); // true
+// console.log(areThereDuplicates("a", "b", "c", "a")); //true
+
+//
+//
+//
+//
+//
+
+// USING MULTIPLE POINTERS PATTERN (Two pointers)
+function areThereDuplicates3(...args) {
+  let start = 0;
+  let next = 1;
+
+  if (typeof args[start] === "string") {
+    args.sort();
+  } else {
+    args.sort((a, b) => a - b);
+  }
+
+  while (next < args.length) {
+    if (args[start] === args[next]) {
+      return true;
+    }
+    start++;
+    next++;
+  }
+  return false;
+}
+
+// ONE LINER
+function areThereDuplicates4() {
+  return new Set(arguments).size !== arguments.length;
+}
+
+console.log(areThereDuplicates3(1, 2, 3)); //false
+console.log(areThereDuplicates3(1, 4, 2, 2, 3, 4, 5, 6, 7, 8, 9)); //true
+console.log(areThereDuplicates3(1, 2, 2)); // true
+console.log(areThereDuplicates3("a", "b", "c", "a")); //true
+console.log(areThereDuplicates3("antler", "zebra", "tiger", "dog")); //false
+console.log(areThereDuplicates3("antler", "dog", "zebra", "tiger", "dog")); //true
