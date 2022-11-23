@@ -22,3 +22,6 @@ function highAndLow3(numbers) {
 console.log(highAndLow("1 2 3 4 5")); // return "5 1"
 console.log(highAndLow2("1 2 -3 -4 4 15")); // return "15 -4"
 console.log(highAndLow3("1 9 3 4 -5")); // return "9 -5"
+
+
+
