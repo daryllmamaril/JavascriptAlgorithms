@@ -14,3 +14,4 @@ function solution(number) {
   return sum;
 }
 console.log(solution(10)); //23
+
