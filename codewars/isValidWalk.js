@@ -6,7 +6,6 @@
 function isValidWalk(walk) {
   let ns = 0, we = 0;
     for (let dir of walk) {
-      console.log(walk)
       if (dir == 'n') ns += 1;
       if (dir == 's') ns -= 1;
       if (dir == 'w') we += 1;
