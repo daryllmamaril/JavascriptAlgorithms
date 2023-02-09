@@ -14,15 +14,23 @@ function DNAStrand(dna) {
   });
   return result.join("");
 }
-// console.log(DNAStrand("ATTGC")); //"TAACG"
-// console.log(DNAStrand("GTAT")); //"CATA"
 
 function DNAStrand2(dna) {
+  return [...dna]
+  .map(d => {
+    return d === "A" ? "T" : d === "T" ? "A" : d === "C" ? "G" : d === "G" ? "C" : "";
+  })
+  .join("");
+}
+console.log(DNAStrand("ATTGC")); //"TAACG"
+console.log(DNAStrand2("GTAT")); //"CATA"
+
+function DNAStrand3(dna) {
   const pairs = { A: "T", T: "A", C: "G", G: "C" };
   return dna
     .split("")
     .map((char) => pairs[char])
     .join("");
 }
-console.log(DNAStrand2("ATTGC")); //"TAACG"
-console.log(DNAStrand2("GTAT")); //"CATA"
+console.log(DNAStrand3("ATTGC")); //"TAACG"
+console.log(DNAStrand3("GTAT")); //"CATA"
