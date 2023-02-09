@@ -9,14 +9,24 @@ function accum(string) {
   return repeatChars.join("-");
 }
 
-function accum2(s) {
-  return [...s]
+function accum2(string) {
+  return [...string]
     .map((char, i) => {
       return char.toUpperCase() + char.toLowerCase().repeat(i);
     })
     .join("-");
 }
 
+function accum3(string) {
+  const chars = string
+  .toUpperCase()
+  .split("")
+  .map((char, i) => {
+    return `${char}${char.toLowerCase().repeat(i)}`;
+  })
+  return chars.join("-");
+};
+
 console.log(accum("abcd")); //-> "A-Bb-Ccc-Dddd"
 console.log(accum2("RqaEzty")); //-> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
-console.log(accum("cwAt")); //-> "C-Ww-Aaa-Tttt"
+console.log(accum3("cwAt")); //-> "C-Ww-Aaa-Tttt"
