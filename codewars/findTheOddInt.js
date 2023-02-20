@@ -8,25 +8,23 @@
 // [1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).
 
 function findOdd(A) {
-  const sortedNums = A.sort((a, b) => a - b);
   let counter = 0;
-
-  for (let i = 0; i < sortedNums.length; i++) {
-    for (let j = 0; j < sortedNums.length; j++) {
-      if (sortedNums[i] === sortedNums[j]) {
+  for (let i = 0; i < A.length; i++) {
+    for (let j = 0; j < A.length; j++) {
+      if (A[i] === A[j]) {
         counter++;
       }
     }
     if (counter % 2 !== 0) {
-      return sortedNums[i]
+      return A[i];
     }
   }
 };
 
 function findOdd2(A) {
   for (let i = 0; i < A.length; i++) {
-    const newNums = A.filter((num) => num === A[i]).length;
-    if (newNums % 2 !== 0) {
+    const arrLength = A.filter((num) => num === A[i]).length;
+    if (arrLength % 2 !== 0) {
       return A[i];
     }
   }
