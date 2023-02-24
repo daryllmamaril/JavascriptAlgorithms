@@ -9,7 +9,7 @@ function highAndLow(numbers) {
 }
 
 function highAndLow2(numbers) {
-  // No need to map to a number but i like how you can map and just put Number on the parameter and it will apply it to all the elements.
+  // No need to map to a number but i like how you can map and just put Number on the parameter and it will apply it to all the elements. You can also put Math or null instead of 0.
   numbers = numbers.split(" ").map(Number);
   return Math.max.apply(0, numbers) + " " + Math.min.apply(0, numbers);
 }
