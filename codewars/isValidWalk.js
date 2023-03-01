@@ -12,7 +12,7 @@ function isValidWalk(walk) {
       if (dir == 'e') we -= 1;
     }
     return walk.length == 10 && ns === 0 && we === 0;
-}
+};
 
 console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s'])); //true
 console.log(isValidWalk(['w','e','w','e','w','e','w','e','w','e','w','e'])); //false

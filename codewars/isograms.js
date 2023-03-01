@@ -7,6 +7,9 @@ function isIsogram(str) {
 function isIsogram2(str) {
   return new Set(str.toUpperCase()).size === str.length;
 }
+
+
+
 console.log(isIsogram("Dermatoglyphics")); //--> true
-console.log(isIsogram2("aba")); //--> false
-console.log(isIsogram("moOse")); //--> false // -- ignore letter case
+console.log(isIsogram("aba")); //--> false
+console.log(isIsogram2("moOse")); //--> false // -- ignore letter case
