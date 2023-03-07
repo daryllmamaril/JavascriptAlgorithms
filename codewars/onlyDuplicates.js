@@ -7,3 +7,4 @@ function onlyDuplicates(str) {
     .join("");
 }
 console.log(onlyDuplicates("abccdefee")); //-->"cceee";
+console.log(onlyDuplicates("dddaz")); //-->"ddd";
